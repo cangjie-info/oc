@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>log</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+</head>
+<body>
+<h1 id="log">Log</h1>
+<h1 id="sept-2022">Sept 2022</h1>
+<h2 id="db-cangjie-created.">DB ‘cangjie’ created.</h2>
+<h2 id="db-table-graph_components-created">DB table graph_components created</h2>
+<p>One row represents the presence of one graph as a component of another. Simple graphs do not have an entry in this table. A component C of a component B of a graph A will only be listed as a component of B, not of A. To the extent possible, this table will be populated by existing data.</p>
+<p>Table should have no duplicate rows. Table should represent historical relationships, not surface similarities in the contemporary orthography.</p>
+<h2 id="python-code">Python code</h2>
+<p>for the project is in <code>~/cangjie-python</code> <code>cjk_utils.py</code></p>
+<h2 id="chise-component-data">CHISE component data</h2>
+<p>The CHISE project has graph component data for the modern script. https://www.chise.org/ids/index.ja.html Added the IDS-UCS-Basic.txt graphs to the graph_components table.</p>
+<p>Issues: components are descriptive of modern graphs, and so distinguish 亻 from 人, 心 from 忄etc. Replacements needed eventually.</p>
+<p><em>TODO</em> merge 亻 忄etc.</p>
+<p><em>TODO</em> create merger table.</p>
+<ul>
+<li>there are three kinds of mergers: 1. 扵 with 於 and 亻 忄; 2. Unicode to palaeographic fonts; 3. {言吾} to 語.</li>
+<li>handle 2 separately when the time come.</li>
+<li>1 and 3 should involve systematic replacement in all tables, and a record in a graphs_merged table. Newly added text data can be checked against the graphs_merged table.</li>
+</ul>
+</body>
+</html>
